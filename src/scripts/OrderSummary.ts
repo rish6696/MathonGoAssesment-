@@ -8,8 +8,8 @@ import { generateError } from "../utilities/errorConstants";
 import logger from "../utilities/logger";
 
 const saleSummaryMailWorker = async () => {
-  const startTime = moment().startOf("day").toDate();
-  const endTime = moment().endOf("day").toDate();
+  const startTime = moment().subtract(1,"days").startOf("day").toDate();
+  const endTime = moment().subtract(1,"days").endOf("day").toDate();
 
   logger.info(`Mail Summary Script started for the Period from  ${startTime} to  ${endTime}`);
   try {
